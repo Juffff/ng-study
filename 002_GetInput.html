@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="getInputApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Input</title>
+    <script src="library/angular.min.js"></script>
+    <script>
+
+        var model = "Hello world!";
+
+        var getInputApp = angular.module("getInputApp", []);
+        getInputApp.controller("getInputAppCtrl", function ($scope) {
+            $scope.message = model;
+            $scope.clickHandler = function(){
+                $scope.message=$scope.text;
+            }
+        });
+    </script>
+</head>
+<body ng-controller="getInputAppCtrl">
+<h1>{{message}}</h1>
+<label>
+    <input ng-model="text">
+</label>
+<button ng-click="clickHandler()">Refresh</button>
+</body>
+</html>
