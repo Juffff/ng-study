@@ -29,6 +29,18 @@
 
         courseListApp.controller("courseListCtrl", function ($scope) {
             $scope.data = model;
+
+            //Add new Course
+            
+            $scope.addNewCourse = function(){
+
+                $scope.data.courses.push({
+                   name: $scope.courseName,
+                    passed: false
+                });
+
+                $scope.courseName = "";
+            }
         });
 
 
